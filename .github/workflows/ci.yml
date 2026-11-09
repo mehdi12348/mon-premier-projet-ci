@@ -1,0 +1,29 @@
+name: CI - Demo HTML JavaScript
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Recuperer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Verifier JavaScript
+        run: node --check script.js
+
+      - name: Verifier HTML
+        run: test -f index.html
+
+      - name: Fin de verification
+        run: echo "Toutes les verifications sont reussies !"
