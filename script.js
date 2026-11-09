@@ -1,5 +1,5 @@
-function afficherMessage() {
-    return "Bonjour les étudiants !";
+function addition(a, b) {
+    return a + b;
 }
 
-document.getElementById("message").textContent = afficherMessage();
+console.log(addition(5, 3));
